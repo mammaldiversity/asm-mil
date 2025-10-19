@@ -1,4 +1,4 @@
-# asm-mil<img src="https://github.com/mammaldiversity/mdd_app/blob/main/assets/icons/favicon512.png?raw=true" alt="ASM Logo" width="120" height="120" />
+# asm-mil<img src="https://github.com/mammaldiversity/mdd_app/blob/main/assets/icons/favicon512.png?raw=true" alt="ASM Logo" align="right" width="120" height="120" />
 
 The ASM's mammal image library repository.
 
