@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Bundle release assets
+        run: |
+          RELEASE_DIR="mil-${{ github.ref_name }}"
+          mkdir -p "$RELEASE_DIR"
+
+          cp -r images "$RELEASE_DIR/"
+          cp -r metadata "$RELEASE_DIR/"
+          cp IMAGE_LICENSE.md "$RELEASE_DIR/"
+
+          tar -czf "$RELEASE_DIR.tar.gz" "$RELEASE_DIR/"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: mil-${{ github.ref_name }}.tar.gz
+          generate_release_notes: true
