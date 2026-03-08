@@ -18,7 +18,7 @@ jobs:
           RELEASE_DIR="mil-${{ github.ref_name }}"
           mkdir -p "$RELEASE_DIR"
 
-          cp -r images "$RELEASE_DIR/"
+          cp -r images-400px-webp "$RELEASE_DIR/"
           cp -r metadata "$RELEASE_DIR/"
           cp IMAGE_LICENSE.md "$RELEASE_DIR/"
 
