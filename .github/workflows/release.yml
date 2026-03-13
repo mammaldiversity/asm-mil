@@ -28,4 +28,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: mil-${{ github.ref_name }}.tar.gz
-          generate_release_notes: true
+          body: |
+            This release includes the following assets:
+            - images-400px-webp
+            - metadata
+            - IMAGE_LICENSE.md
+            See the [ASM MIL committee page](https://www.mammalsociety.org/committees/mammal-images-library) for details on the licensing of the included images.
