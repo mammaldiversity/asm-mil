@@ -18,7 +18,7 @@ jobs:
           RELEASE_DIR="mil-${{ github.ref_name }}"
           mkdir -p "$RELEASE_DIR"
 
-          cp -r images-400px-webp "$RELEASE_DIR/"
+          cp -r images-540px-webp "$RELEASE_DIR/"
           cp -r metadata "$RELEASE_DIR/"
           cp IMAGE_LICENSE.md "$RELEASE_DIR/"
 
@@ -30,7 +30,7 @@ jobs:
           files: mil-${{ github.ref_name }}.tar.gz
           body: |
             This release includes the following assets:
-            - images-400px-webp
+            - images-540px-webp
             - metadata
             - IMAGE_LICENSE.md
             See the [ASM MIL committee page](https://www.mammalsociety.org/committees/mammal-images-library) for details on the licensing of the included images.
