@@ -16,18 +16,23 @@ pip install mil-kit
 If you are using [uv](https://astral.sh/uv/) for Python version management, you can create a virtual environment and install the dependencies as follows:
 
 ```bashbash
-uv venv
-uv pip install mil-kit
+uv tool install mil-kit
 ```
 
 ## Release process
 
 ### Convert the PSD files release by the ASM MIL committee to webp format. It will also remove all the non-image layers.
 
-Run the following command to convert the PSD files to webp format:
+Run the following command to convert the PSD files to webp format.
 
 ```bash
-uv run mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/webp/output -f webp
+uvx mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/webp/output -f webp
+```
+
+Or if you are using pip:
+
+```bash
+mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/webp/output -f webp
 ```
 
 > **Important**: Make sure to set the `--max-resolution` flag to `540` to ensure that the images are resized to a maximum resolution supported by the ASM MDD website.
@@ -37,8 +42,15 @@ uv run mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/we
 Run the following command to generate watermarked images for the web catalog:
 
 ```bash
-uv run mil-kit watermark -d path/to/webp/output -r -o watermark-540px -m path/to/mil/excel/metadata -f webp
+uvx mil-kit watermark -d path/to/webp/output -r -o watermark-540px -m path/to/mil/excel/metadata -f webp
 ```
+
+Or if you are using pip:
+
+```bash
+mil-kit watermark -d path/to/webp/output -r -o watermark-540px -m path/to/mil/excel/metadata -f webp
+```
+
 
 ### Copy the watermarked images to the this repository
 
