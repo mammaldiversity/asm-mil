@@ -26,13 +26,13 @@ uv tool install mil-kit
 Run the following command to convert the PSD files to webp format.
 
 ```bash
-uvx mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/webp/output -f webp
+uvx mil-kit export -d path/to/psd/files -r --max-resolution 540 -f webp -o path/to/webp/output
 ```
 
 Or if you are using pip:
 
 ```bash
-mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/webp/output -f webp
+mil-kit export -d path/to/psd/files -r --max-resolution 540 -f webp -o path/to/webp/output
 ```
 
 > **Important**: Make sure to set the `--max-resolution` flag to `540` to ensure that the images are resized to a maximum resolution supported by the ASM MDD website.
@@ -42,15 +42,14 @@ mil-kit export -d path/to/psd/files -r --max-resolution 540 -o path/to/webp/outp
 Run the following command to generate watermarked images for the web catalog:
 
 ```bash
-uvx mil-kit watermark -d path/to/webp/output -r -o watermark-540px -m path/to/mil/excel/metadata -f webp
+uvx mil-kit watermark -d path/to/webp/output -r -o watermark-540px -f webp -m path/to/mil/excel/metadata
 ```
 
 Or if you are using pip:
 
 ```bash
-mil-kit watermark -d path/to/webp/output -r -o watermark-540px -m path/to/mil/excel/metadata -f webp
+mil-kit watermark -d path/to/webp/output -r -o watermark-540px -f webp -m path/to/mil/excel/metadata
 ```
-
 
 ### Copy the watermarked images to the this repository
 
